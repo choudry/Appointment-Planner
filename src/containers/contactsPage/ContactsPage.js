@@ -24,7 +24,7 @@ export const ContactsPage = (props) => {
     alert('Input field missing..!')
     return
    }
-   
+
    if(duplicateName === true) {
     alert('Duplicate name..!')
     return
@@ -45,10 +45,11 @@ export const ContactsPage = (props) => {
   contacts array variable in props
   */
  useEffect(() => {
-  
   const result = contacts.find((contact) => contact.Name === name);
   if (result !== undefined) {
     setDuplicateName(true)
+  } else {
+    setDuplicateName(false);
   }
  }, [name]);
 
